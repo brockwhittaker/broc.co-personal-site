@@ -1,0 +1,170 @@
+@font-face {
+    font-family: "Soehne";
+    font-weight: 200;
+    font-style: normal;
+    src: url("./fonts/c1f05986-e3ec-4c3e-b8b3-00746842b6aa.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 200;
+    font-style: italic;
+    src: url("./fonts/4b54e379-f8a1-4c9d-a6b1-c7483bfd61a5.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 300;
+    font-style: normal;
+    src: url("./fonts/9ce464aa-8ed0-4cd0-afb9-ab30132498e1.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 300;
+    font-style: italic;
+    src: url("./fonts/766d8f1d-def5-4d47-b0a3-80bd71044ec4.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 400;
+    font-style: normal;
+    src: url("./fonts/e380349e-c395-4b64-a0ce-de67ba257388.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 400;
+    font-style: italic;
+    src: url("./fonts/c0f363b7-5e69-492b-811b-1d49f308838b.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 500;
+    font-style: normal;
+    src: url("./fonts/29ce3a22-ff06-44cd-a183-49674734343a.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 500;
+    font-style: italic;
+    src: url("./fonts/24ebd4a4-ed80-43ad-8d75-ca47e1e0d6a7.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 600;
+    font-style: normal;
+    src: url("./fonts/a276251d-3dac-4c74-9839-f0f8b434ed20.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 600;
+    font-style: italic;
+    src: url("./fonts/5f4d866c-eaf6-4b3f-a074-929c46045dd5.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 700;
+    font-style: normal;
+    src: url("./fonts/7aba46e3-0908-467f-bebd-f1dbba4b97c6.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 700;
+    font-style: italic;
+    src: url("./fonts/5214b5b3-c3db-42c5-a126-bf1b590d226c.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 800;
+    font-style: normal;
+    src: url("./fonts/73cc80ce-4fd6-46f1-a0f4-cd16f266782f.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 800;
+    font-style: italic;
+    src: url("./fonts/8aa0466f-cdb6-4a88-85d9-707617e85a2d.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 900;
+    font-style: normal;
+    src: url("./fonts/b17f1048-043a-497f-adf4-8a1a8a95e5ca.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Soehne";
+    font-weight: 900;
+    font-style: italic;
+    src: url("./fonts/a38fb889-4bc8-4dc0-80a6-6e018e5cf7b3.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'Roboto Mono';
+	src: url('fonts/RobotoMono-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto Mono';
+	src: url('fonts/RobotoMono-Italic.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Roboto Mono';
+	src: url('fonts/RobotoMono-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto Mono';
+	src: url('fonts/RobotoMono-MediumItalic.ttf') format('truetype');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Soehne';
+	src: url('fonts/soehne-test-leicht-kursiv.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Albertus Nova';
+	src: url('fonts/albertus-nova-light.woff2') format('woff2');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'Albertus Nova';
+	src: url('fonts/albertus-nova-regular.woff2') format('woff2');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Albertus Nova';
+	src: url('fonts/albertus-nova-medium.woff2') format('woff2');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'Albertus Nova';
+	src: url('fonts/albertus-nova-bold.woff2') format('woff2');
+	font-weight: 600;
+}

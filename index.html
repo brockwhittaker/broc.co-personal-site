@@ -116,6 +116,19 @@
         </div>
       </div>
     </div>
+    <script>
+      document.body.classList.add("no-transition");
+      document.body.classList.add("hide");
+
+      document.onreadystatechange = function () {
+        if (document.readyState === 'interactive') {
+          setTimeout(() => {
+            document.body.classList.remove("no-transition");
+            document.body.classList.remove("hide");
+          }, 10);
+        }
+      }
+    </script>
     <!--
     <div class="sign">
       <div>Uptown & Queens</div>

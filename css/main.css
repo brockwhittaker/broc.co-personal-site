@@ -138,21 +138,21 @@ p i {
 
 
 .work-description .h-55 {
-  margin-top: -25px;
   height: 25px;
-  transform: translateY(8px);
 }
 
 .work-description .h-60 {
-  margin-top: -30px;
   height: 30px;
-  transform: translateY(12px);
+
 }
 
 .work-description .h-75 {
   height: 35px;
-  margin-top: -35px;
-  transform: translateY(15px);
+  margin-bottom: -10px;
+}
+
+.work-description .h-75--zulip {
+  margin-bottom: -7px;
 }
 
 #experiments .work-description .h-55,
@@ -166,6 +166,10 @@ p i {
   text-decoration: none;
   color: #d09945;
   font-weight: 400;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-top: 0px;
 }
 
 .work-description p {
@@ -386,18 +390,5 @@ a {
   #experiments .work-demo--flex#stochasticMarketDemo > div > img {
     margin: 20px 20px 20px 10px;
     width: calc(100% - 30px);
-  }
-
-  .work-description h3 img {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .work-description h3 .h-55 {
-    margin-top: -0px;
-  }
-
-  .work-description h3 .h-75 {
-    margin-top: -10px;
   }
 }

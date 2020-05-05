@@ -367,6 +367,9 @@ a {
   #bio {
     max-width: 600px;
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 50px;
   }
 
   #hedcut {

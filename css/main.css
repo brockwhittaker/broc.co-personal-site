@@ -73,6 +73,10 @@ h2 {
   max-width: 900px;
 }
 
+#bio .contact {
+  opacity: 0.5;
+}
+
 .bio-text {
   max-width: 620px;
   margin-right: calc(-14px);
@@ -231,14 +235,14 @@ a {
 
 #bitArrayDemo > div,
 #stochasticMarketDemo > div,
-#stochasticMarketDemo > div {
+#fontDemo > div {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 50px;
   height: 100%;
-  background: transparent;
+  background: #ffffff80;
 }
 
 #bitArrayDemo img {
@@ -258,7 +262,6 @@ a {
 }
 
 #stochasticMarketDemo > div {
-  background: transparent;
   padding: 20px;
 }
 
@@ -344,12 +347,9 @@ a {
 @media (max-width: 500px) {
   #stochasticMarketDemo.work-demo--flex > div,
   #bitArrayDemo.work-demo--flex > div {
-    padding: 0px;
+    padding: 20px 0px;
   }
 
-  #experiments .work-demo--flex#bitArrayDemo > div > img {
-    padding: 0px;
-  }
 
   #experiments .work-demo--flex#stochasticMarketDemo > div > img {
     margin: 20px 20px 20px 10px;

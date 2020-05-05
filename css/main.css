@@ -136,6 +136,12 @@ p i {
   width: calc(100% - 60px - 4px);
 }
 
+.work-description a.site-link {
+  text-decoration: none;
+  color: #d09945;
+  font-weight: 400;
+}
+
 .work-description p {
   margin: 20px 0px;
 }

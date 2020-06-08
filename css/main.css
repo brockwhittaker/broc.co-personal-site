@@ -290,6 +290,7 @@ a {
 
 #bitArrayDemo > div,
 #stochasticMarketDemo > div,
+#metaDemo > div,
 #fontDemo > div {
   display: flex;
   justify-content: center;
@@ -325,6 +326,11 @@ a {
   margin: 60px 0px;
 }
 
+#metaDemo img {
+  width: 350px;
+  margin: 20px 0px;
+}
+
 @media (max-width: 1200px) {
   .section {
     padding: 0px 20px;
@@ -354,6 +360,11 @@ a {
   #experiments .work-demo--flex#stochasticMarketDemo > div > img {
     width: calc(50% - 40px - 4px);
     margin: 40px 20px;
+  }
+
+  #experiments .work-demo--flex#metaDemo > div > img {
+    width: calc(80% - 4px);
+    margin: 0px 20px;
   }
 
   #experiments .work-demo--flex#bitArrayDemo > div > img  {

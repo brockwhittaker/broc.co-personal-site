@@ -140,7 +140,7 @@ export default class MarketCanvasArt {
     context.textAlign = 'center';
     context.fillStyle = '#05052680';
 
-    context.fillText('S&P Returns (Simulated)'.toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), this.leftCenter.x, this.leftCenter.y + 400)
+    context.fillText('S&P 500 Returns (Simulated)'.toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), this.leftCenter.x, this.leftCenter.y + 400)
     context.fillText('Normal Distribution Returns'.toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), this.rightCenter.x, this.rightCenter.y + 400);
 
     setTimeout(() => {

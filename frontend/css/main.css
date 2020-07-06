@@ -32,7 +32,7 @@ body.no-transition {
   transition: none;
 }
 
-body.hide > #profile {
+body.hide #profile {
   transform: scale(1.1);
   opacity: 0;
 }

@@ -30,7 +30,7 @@ export default class MarketCanvasArt {
     this.canvas.style.width = "100vw";
     this.canvas.style.height = "100vh";
 
-    if (window.innerWidth < 500) {
+    if (window.innerWidth < 768) {
       this.leftCenter = {
         x: this.canvas.width / 3 - 50,
         y: this.canvas.height * 0.55,
@@ -95,7 +95,7 @@ export default class MarketCanvasArt {
 
     context.textAlign = "left";
     context.textBaseline = "middle";
-    if (window.innerWidth < 500) {
+    if (window.innerWidth < 768) {
       context.fillText("+" + ((max * 100).toFixed(2) + "%").toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), x + 30 + 10, y - 50 - 15);
       context.fillText("Increase".toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), x + 30 + 10, y - 50 + 10);
     } else {
@@ -158,7 +158,7 @@ export default class MarketCanvasArt {
     context.textAlign = 'center';
     context.fillStyle = '#05052680';
 
-    if (window.innerWidth < 500) {
+    if (window.innerWidth < 768) {
       context.fillText('S&P 500'.toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), this.leftCenter.x, this.leftCenter.y + 400)
       context.fillText('Normal Dist'.toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), this.rightCenter.x, this.rightCenter.y + 400);
     } else {
@@ -179,7 +179,7 @@ export default class MarketCanvasArt {
         let nor = norm[counter];
         let val = dist[counter++];
 
-        let MULTIPLIER = window.innerWidth < 500 ? 3000 : 5000;
+        let MULTIPLIER = window.innerWidth < 768 ? 3000 : 5000;
 
         context.beginPath();
         context.arc(this.leftCenter.x + x * (val - 1) * MULTIPLIER, this.leftCenter.y + y * (val - 1) * MULTIPLIER, 2, 0, Math.PI * 2);

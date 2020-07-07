@@ -61,23 +61,16 @@ export default class PredictingMarketReturns extends React.Component {
       expiration_dates: null,
       expiration: null,
       table_slice: null,
-      ticker: "SPY",
+      ticker: null,
       readerType: "Condensed",
+      loading: 0,
     };
 
     document.title = "Predicting Returns | brooock.com"
   }
 
   componentDidMount () {
-    fetch(`/api/${this.state.ticker}/`).then(r => r.json()).then(({ expiration_dates }) => {
-      let defaultExpiration = getClosestExpiryToNewYear(expiration_dates);
-      this.setState({
-        expiration_dates,
-        expiration: getClosestExpiryToNewYear(expiration_dates),
-      });
-
-      this.calculateForExpiry(defaultExpiration);
-    });
+    this.updateTicker("SPY");
 
     setTimeout(() => {
       new MarketCanvasArt(this.canvas).draw();
@@ -85,7 +78,8 @@ export default class PredictingMarketReturns extends React.Component {
   }
 
   calculateForExpiry (exp) {
-    this.setState({ expiration: exp });
+    this.setState({ expiration: exp, loading: 0, });
+
     fetch(`/api/${this.state.ticker}/options/${exp}/`).then(r => r.json()).then(data => {
 
       let calls = drawCallsAndPutsExpectations(data, "calls"),
@@ -107,21 +101,32 @@ export default class PredictingMarketReturns extends React.Component {
         table_slice[x][0].d = y;
       }
 
+      this.setState({ table_slice, loading: 2 });
 
-      this.setState({ table_slice });
+      chart({
+        container: this.chart,
+        series: [{
+          name: `Odds (Above, Below Price) on ${exp}`,
+          data: calls,
+          color: 'transparent'
+        }], title: `${this.state.ticker} Price Predictions on ${exp}`, subtitle: `Market outcomes expressed as betting odds, calculated through live options premiums retrieved from Robinhood.`, xAxisMin: calls[calls.length - 1].x, xAxisDividingIndex: +calls[calls_max_index].strikes[0].strike_price
+      });
+    });
+  }
 
-      chart({ container: this.chart, series: [{
-        name: `Odds (Above, Below Price) on ${exp}`,
-        data: calls,
-        color: 'transparent'
-      }], title: `${this.state.ticker} Price Predictions on ${exp}`, subtitle: `Market outcomes expressed as betting odds, calculated through live options premiums retrieved from Robinhood.`, xAxisMin: calls[calls.length - 1].x, xAxisDividingIndex: +calls[calls_max_index].strikes[0].strike_price });
-/*
-      chart({ container: this.chart2, series: [{
-        name: `Odds (Above, Below Price) on ${exp}`,
-        data: puts,
-        color: 'transparent'
-      }], title: `SPY Price on ${exp}`, xAxisMin: puts[puts.length - 1].x });
-*/
+  updateTicker (ticker) {
+    if (ticker === this.state.ticker) return;
+
+    this.setState({ ticker, loading: 0 });
+
+    fetch(`/api/${ticker}/`).then(r => r.json()).then(({ expiration_dates }) => {
+      let defaultExpiration = getClosestExpiryToNewYear(expiration_dates);
+      this.setState({
+        expiration_dates,
+        expiration: getClosestExpiryToNewYear(expiration_dates),
+      });
+
+      this.calculateForExpiry(defaultExpiration);
     });
   }
 
@@ -389,12 +394,20 @@ export default class PredictingMarketReturns extends React.Component {
           </section>
           <div className="inline-note"><sup>1</sup> This makes a simple assumption that SPY trades in dollar increments, for simplicity of illustrating the math. The EV is slightly different as the binary payoff model can yield payouts between $0-$1 between SPY closing ranges of $324-$325.</div>
         </article>
+        <div className="app-inputs">
+          <div className="app-input">
+            <label>Ticker</label>
+            <input type="text" onBlur={e => this.updateTicker(e.target.value)} onKeyUp={e => e.keyCode === 13 && e.target.blur()} defaultValue={this.state.ticker} />
+          </div>
+          <div className="app-input">
+            <label>Options Expiries</label>
+            <select onChange={e => this.calculateForExpiry(e.target.value)} value={this.state.expiration}>
+              { this.state.expiration_dates && this.state.expiration_dates.map(o => <option value={o}>{ o.replace(/-/g, ".") }</option>) }
+            </select>
+          </div>
+        </div>
         <div className="interactive-app">
-          <ul className="expiration-dates">
-            <b>Options Expiries</b>
-            { this.state.expiration_dates && this.state.expiration_dates.map(o => <li className={this.state.expiration === o ? "selected" : ""} onClick={() => this.calculateForExpiry(o)}>{ o }</li>) }
-          </ul>
-          <div className="table">
+          <div className={"table" + (this.state.loading < 1 ? " loading" : "")}>
             <table>
               <thead>
                 <tr>
@@ -414,7 +427,7 @@ export default class PredictingMarketReturns extends React.Component {
               </tbody>
             </table>
           </div>
-          <div className="chart" ref={node => this.chart = node} />
+          <div className={"chart" + (this.state.loading < 2 ? " loading" : "")} ref={node => this.chart = node} />
         </div>
         {/*<div className="date-picker">
           <div className="arrow arrow--left">&lt;</div>

@@ -1,0 +1,92 @@
+.popover-wrapper {
+  width: 100%;
+  max-width: 400px;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.popover {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 10px 50px -20px #00000080;
+
+  line-height: 1.4;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.popover-wrapper.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popover--top {
+  transform: translate(-50%, calc(-100% + 10px)) scale(0.9);
+}
+
+.popover--top.show {
+  transform: translate(-50%, -100%);
+}
+
+
+.popover--bottom {
+  transform: translate(-50%, calc(0% - 10px)) scale(0.9);
+}
+
+.popover--bottom.show {
+  transform: translate(0%, 0%);
+}
+
+.popover--right {
+  transform: translate(calc(0% - 20px), -50%) scale(0.9);
+}
+
+.popover--right.show {
+  transform: translate(0%, -50%) scale(0.9);
+}
+
+
+.popover--left {
+  transform: translate(calc(-100% + 20px), -50%) scale(0.9);
+}
+
+.popover--left.show {
+  transform: translate(-100%, -50%);
+}
+
+.popover-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.popover .step-of {
+  margin-top: 24px;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.popover .right {
+  margin-top: 20px;
+  float: right;
+}
+
+.popover button.ghost + span {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 4px;
+  margin-left: -7px;
+  margin-right: 6px;
+  opacity: 0.5;
+}
+
+.popover li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

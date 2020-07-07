@@ -63,7 +63,7 @@ const pluckFromObject = (keys) => {
     const key = `${ticker}-${date}`;
 
     if (cache[key] && new Date().getTime() < cache[ticker].expires) {
-      res.status(200).json(cache[key].payload);
+      return res.status(200).json(cache[key].payload);
     }
 
     let options_dates = await Robinhood.options_dates(ticker);
@@ -74,7 +74,6 @@ const pluckFromObject = (keys) => {
 
     const OBJECT_KEYS = ["adjusted_mark_price", "strike_price", "open_interest"];
     let payload = { calls: calls.map(pluckFromObject(OBJECT_KEYS)), puts: puts.map(pluckFromObject(OBJECT_KEYS)) };
-    console.log(payload);
     cache[key] = { payload, expires: new Date().getTime() + (1000 * 60 * 60) };
 
     res.status(200).json(payload);

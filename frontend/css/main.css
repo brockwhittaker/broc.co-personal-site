@@ -1,4 +1,5 @@
 @import "./fonts.css";
+@import "./popover.css";
 
 :root {
   --text: #443a37;

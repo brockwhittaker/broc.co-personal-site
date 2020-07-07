@@ -81,6 +81,7 @@ body {
 	background: #eefbff;
 	outline: 20px solid #eefbff;
 	font-family: "Soehne", "Source Sans Pro", sans-serif;
+	line-height: 1.4;
 }
 
 .header canvas {

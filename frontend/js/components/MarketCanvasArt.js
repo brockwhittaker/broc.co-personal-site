@@ -23,12 +23,13 @@ export default class MarketCanvasArt {
     this.canvas = canvas;
     this.context = canvas.getContext('2d');
 
-
-    this.canvas.height = window.innerHeight * 2;
-    this.canvas.width = window.innerWidth * 2;
-
     this.canvas.style.width = "100vw";
     this.canvas.style.height = "100vh";
+
+    const { width, height } = this.canvas.getBoundingClientRect();
+
+    this.canvas.height = height * 2;
+    this.canvas.width = width * 2;
 
     if (window.innerWidth < 768) {
       this.leftCenter = {

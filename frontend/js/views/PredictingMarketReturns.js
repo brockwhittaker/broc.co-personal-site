@@ -364,11 +364,11 @@ export default class PredictingMarketReturns extends React.Component {
           <h2>What can we learn from this data?</h2>
           <section>
             <p>With an entire options chain worth of probability data we can extract quite a few useful pieces of information:</p>
-            <blockquote>Find the expected future price of a stock on a given date.</blockquote>
+            <blockquote>1. Find the expected future price of a stock on a given date.</blockquote>
             <p className="quote-description">By finding the midpoint where premiums decrease at half the rate at which strikes increase, you can find the average price the market believes a stock will be at on that expiration.</p>
-            <blockquote>Find the probability of a stock being above or below any price on a given date.</blockquote>
+            <blockquote>2. Find the probability of a stock being above or below any price on a given date.</blockquote>
             <p className="quote-description">It is important from a portfolio insurance perspective to have a grasp on how likely catastrophic events may be, or even what the chance of your option increasing/decreasing to a certain level is.</p>
-            <blockquote>Find whether the market is factoring in a high likelihood of massive upside, or massive downside.</blockquote>
+            <blockquote>3. Find whether the market is factoring in a high likelihood of massive upside, or massive downside.</blockquote>
             <div className="quote-description expanded-mode-info" onClick={() => this.toggleReaderType()}>
               <p>If you want to read more about skewness, expand the article here. ↓</p>
             </div>

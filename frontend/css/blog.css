@@ -93,7 +93,7 @@ body {
 .blog::selection { background-color: #30304f; color: #fff; }
 
 blockquote {
-	margin: 40px 0 0 50px;
+	margin: 20px 0 0 50px;
 	text-align: center;
 	font-size: 1.2em;
 	font-weight: 500;
@@ -469,5 +469,16 @@ article section img {
 	.header h1,
 	.header h2 {
 		left: 20px;
+	}
+
+	article h2 {
+		font-size: 1.6em;
+		margin-bottom: 15px;
+	}
+
+	table,
+	p,
+	article section p {
+	  font-size: 1em;
 	}
 }

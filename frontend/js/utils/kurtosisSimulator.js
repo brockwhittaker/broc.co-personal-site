@@ -3,7 +3,7 @@ const { quant } = require("./finance.js");
 const blackScholes = require("./blackScholes");
 const RND = require("./randomNormalDistribution.js");
 
-export default ({ standardDeviation = 0.01, kurtosisQuant = 2, days = 1, sampleSize = 10000, sampleMean = 1, type = "call" }) => {
+export default ({ standardDeviation = 0.01, kurtosisQuant = 1.9, days = 1, sampleSize = 10000, sampleMean = 1, type = "call" }) => {
   let dist = {
     kurtosis: () => {
       console.log({kurtosisQuant})

@@ -110,8 +110,6 @@ export default class PredictingMarketReturns extends React.Component {
 
       this.setState({ table_slice });
 
-      console.log({ calls_max_index })
-
       chart({ container: this.chart, series: [{
         name: `Odds (Above, Below Price) on ${exp}`,
         data: calls,

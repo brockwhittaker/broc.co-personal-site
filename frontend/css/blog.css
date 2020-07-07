@@ -63,8 +63,8 @@ body {
 
 .blog.blog--expanded .expanded {
 	display: block;
-	background: #fff6d9;
-	outline: 20px solid #fff6d9;
+	background: #eefbff;
+	outline: 20px solid #eefbff;
 }
 
 .blog.blog--expanded .expanded-mode-info {
@@ -78,8 +78,8 @@ body {
 .expanded-mode-info p {
 	font-weight: 400;
 	margin: 40px 0px;
-	background: #fff6d9;
-	outline: 20px solid #fff6d9;
+	background: #eefbff;
+	outline: 20px solid #eefbff;
 	font-family: "Soehne", "Source Sans Pro", sans-serif;
 }
 
@@ -437,6 +437,10 @@ article section img {
 @media (max-width: 800px) {
 	article {
 		margin: 50px;
+	}
+
+	.interactive-app {
+		height: auto;
 	}
 
 	.header .image-wrapper {

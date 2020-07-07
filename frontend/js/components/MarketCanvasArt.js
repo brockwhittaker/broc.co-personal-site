@@ -23,21 +23,34 @@ export default class MarketCanvasArt {
     this.canvas = canvas;
     this.context = canvas.getContext('2d');
 
-    this.canvas.width = window.innerWidth * 2;
+
     this.canvas.height = window.innerHeight * 2;
+    this.canvas.width = window.innerWidth * 2;
 
     this.canvas.style.width = "100vw";
     this.canvas.style.height = "100vh";
 
-    this.leftCenter = {
-      x: this.canvas.width / 3,
-      y: this.canvas.height * 0.55,
-    };
+    if (window.innerWidth < 500) {
+      this.leftCenter = {
+        x: this.canvas.width / 3 - 50,
+        y: this.canvas.height * 0.55,
+      };
 
-    this.rightCenter = {
-      x: (this.canvas.width / 3) * 2,
-      y: this.canvas.height * 0.55,
-    };
+      this.rightCenter = {
+        x: (this.canvas.width / 3) * 2 + 50,
+        y: this.canvas.height * 0.55,
+      };
+    } else {
+      this.leftCenter = {
+        x: this.canvas.width / 3,
+        y: this.canvas.height * 0.55,
+      };
+
+      this.rightCenter = {
+        x: (this.canvas.width / 3) * 2,
+        y: this.canvas.height * 0.55,
+      };
+    }
   }
 
   background () {
@@ -82,7 +95,12 @@ export default class MarketCanvasArt {
 
     context.textAlign = "left";
     context.textBaseline = "middle";
-    context.fillText(('Max daily increase: +' + (max * 100).toFixed(2) + "%").toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), x + 30 + 10, y - 50 - 15);
+    if (window.innerWidth < 500) {
+      context.fillText("+" + ((max * 100).toFixed(2) + "%").toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), x + 30 + 10, y - 50 - 15);
+      context.fillText("Increase".toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), x + 30 + 10, y - 50 + 10);
+    } else {
+      context.fillText(('Max daily increase: +' + (max * 100).toFixed(2) + "%").toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), x + 30 + 10, y - 50 - 15);
+    }
 
   }
 
@@ -140,8 +158,13 @@ export default class MarketCanvasArt {
     context.textAlign = 'center';
     context.fillStyle = '#05052680';
 
-    context.fillText('S&P 500 Returns (Simulated)'.toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), this.leftCenter.x, this.leftCenter.y + 400)
-    context.fillText('Normal Distribution Returns'.toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), this.rightCenter.x, this.rightCenter.y + 400);
+    if (window.innerWidth < 500) {
+      context.fillText('S&P 500'.toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), this.leftCenter.x, this.leftCenter.y + 400)
+      context.fillText('Normal Dist'.toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), this.rightCenter.x, this.rightCenter.y + 400);
+    } else {
+      context.fillText('S&P 500 Returns (Simulated)'.toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), this.leftCenter.x, this.leftCenter.y + 400)
+      context.fillText('Normal Distribution Returns'.toUpperCase().split("").join(String.fromCharCode(8202) + String.fromCharCode(8202)), this.rightCenter.x, this.rightCenter.y + 400);
+    }
 
     setTimeout(() => {
       this.drawMaxDot();
@@ -156,12 +179,14 @@ export default class MarketCanvasArt {
         let nor = norm[counter];
         let val = dist[counter++];
 
+        let MULTIPLIER = window.innerWidth < 500 ? 3000 : 5000;
+
         context.beginPath();
-        context.arc(this.leftCenter.x + x * (val - 1) * 5000, this.leftCenter.y + y * (val - 1) * 5000, 2, 0, Math.PI * 2);
+        context.arc(this.leftCenter.x + x * (val - 1) * MULTIPLIER, this.leftCenter.y + y * (val - 1) * MULTIPLIER, 2, 0, Math.PI * 2);
         context.fill();
 
         context.beginPath();
-        context.arc(this.rightCenter.x + x * nor * 5000, this.rightCenter.y + y * nor * 5000, 2, 0, Math.PI * 2);
+        context.arc(this.rightCenter.x + x * nor * MULTIPLIER, this.rightCenter.y + y * nor * MULTIPLIER, 2, 0, Math.PI * 2);
         context.fill();
       }
     }, 0);

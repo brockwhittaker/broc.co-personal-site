@@ -86,9 +86,18 @@ const pluckFromObject = (keys) => {
     res.status(200).json(history);
   });
 
-  app.use("/dist/", express.static("../dist"));
+  app.get('/api/posts/:blogSlug', async (req, res) => {
+    const { blogSlug } = req.params
+    let blog = await fs.readFile(path.join(__dirname, "..", "posts", blogSlug), "utf8")
+    res.status(200).send(blog)
+  })
 
+  app.use("/dist/", express.static("../dist"));
+  app.use("/blog-dist/", express.static("../blog-dist"));
+
+  app.get('/blog/*', (req, res) => res.sendFile(path.join(__dirname, "../blog-dist/blog.html")));
   app.get('/', (req, res) => res.sendFile(path.join(__dirname, "../dist/index.html")));
+
   app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, "../dist/index.html"));
   });

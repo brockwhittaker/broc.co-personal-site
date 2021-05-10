@@ -1,0 +1,6 @@
+  title: SPACs: An issue with information asymmetry
+  publishedAt: 1603931497816
+--metadata--
+SPACs are the very-cool-financial-instrument du jour in 2020 that is helping bring some of the [sexiest private companies](https://www.wsj.com/articles/opendoor-deal-doubles-down-on-ibuying-frenzy-11600215341) to the public markets. Why the meteoric rise in capital behind SPACs in the last year? Special Purpose Acquisition Companies help remove the risk of an IPO-pop for their acquisition target by being acquired by an already-publicly traded SPAC that can better guarantee market-pricing for their initial offering. Aside from that, the regulatory process is a bit simpler, and companies who are unfamiliar or uncomfortable with undergoing the tedious IPO process can rely on the expertise of the SPAC to help them smoothly transition to the public markets.
+
+A new problem has been created. Because SPACs are publicly traded at the time that the SPAC announces its target, there leaves a vulnerable time where there is no public requirement to disclose the deep financials of the acquisition target, but the SPAC is not barred from outwardly soliciting and marketing the potential deal to investors, thereby creating a negative incentive model where SPAC operators are incentivized to create as high of a valuation as possible, while not having to

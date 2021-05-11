@@ -1,0 +1,67 @@
+ .housing-blog .header h1, .housing-blog .header h2 {
+   position: static;
+   text-align: left;
+   display: inline;
+   padding: 2px;
+ }
+
+.housing-blog .header h1 {
+  color: #fff;
+  background: #000;
+  line-height: 1.4;
+}
+
+.housing-blog .header h2 {
+  color: #b30d42;
+  display: block;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.housing-blog article h2 {
+  font-size: 1.8em;
+}
+
+.header-wrapper {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  width: 100%;
+  text-align: left;
+}
+
+.housing-blog .header {
+  display: inline-block;
+  width: calc(100% - 100px);
+  height: 70vh;
+  background-position: center center;
+  margin: 50px;
+}
+
+.housing-blog .header::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(10deg, #f4e0c8, #f4e0c800 70%);
+}
+
+.housing-blog p {
+  font-size: 1em;
+  margin: 15px 0 10px 0;
+}
+
+.housing-blog .figure img {
+  width: 100%;
+
+}
+
+.figure--article-width {
+  padding: 20px 20px 5px 20px;
+  background: #fafafa;
+  max-width: 1000px;
+  margin: 20px -150px;
+  width: calc(100% + 400px);
+}

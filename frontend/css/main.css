@@ -1,6 +1,8 @@
 @import "./fonts.css";
 @import "./popover.css";
 
+@import "./housing-blog.css";
+
 :root {
   --text: #443a37;
   --box-shadow: #443a3780;

@@ -24,6 +24,8 @@ const cache = {
 
 };
 
+const writeLog = (log) => fs.promises.appendFile(path.join(__dirname, "..", "logs", "logs.log"), JSON.stringify(log) + "\n");
+
 const chalk = require('chalk');
 
 const pluckFromObject = (keys) => {
@@ -36,6 +38,7 @@ const pluckFromObject = (keys) => {
     return obj;
   }
 }
+
 (async () => {
   app.use(bodyParser.json());
   app.use(require('cookie-parser')());
@@ -99,15 +102,19 @@ const pluckFromObject = (keys) => {
   app.get('/', (req, res) => res.sendFile(path.join(__dirname, "../dist/index.html")));
 
   app.get('/*', (req, res) => {
+    let cookie = req.cookies.brocklytics
     res.sendFile(path.join(__dirname, "../dist/index.html"));
-  });
-
-
-  app.use((req, res, next) => {
-    console.log(chalk.red(req.method) + " " + chalk.blue(req.originalUrl));
-    console.log(utils.indent(`cookie: ` + chalk.blue(req.cookies[`meta/user/private_key`] || req.query[`meta/user/private_key`]), 2));
-    console.log(utils.indent(`body: ` + utils.prettyPrintObject(req.body), 2));
-    next();
+    if (!cookie) {
+      cookie = Math.random().toString().split(".")[1]
+      res.cookie('brocklytics', cookie, { maxAge: 1000 * 60 * 60 * 24 * 30 });
+    }
+    const log = {
+      url: req.url,
+      ip: req.ip,
+      time: new Date().getTime(),
+      cookie,
+    }
+    writeLog(log);
   });
 
   app.get('/', (req, res) => res.sendFile(path.join(__dirname, "../dist/index.html")));

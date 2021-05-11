@@ -1,0 +1,1 @@
+The log file is located in `./log.log`.

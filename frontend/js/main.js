@@ -25,6 +25,25 @@ class App extends React.Component {
   }
 }
 
+const generatePathname = () => {
+  const alpha = `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`;
+  let str = ``;
+
+  for (let x = 0; x < 5; x++) {
+    str += alpha[~~(Math.random() * alpha.length)]
+  }
+
+  return str;
+}
+
+const pathname = (() => {
+  const pathname = localStorage.getItem("brocklytics/t") || generatePathname();
+  localStorage.setItem("brocklytics/t", pathname)
+  return pathname;
+})();
+
+window.history.pushState(null, "", location.pathname + "?t=" + pathname);
+
 ReactDOM.render(
   <App />,
   document.getElementById('root')

@@ -6,7 +6,7 @@ import svg from "../../css/fonts/soehne-fett.svg";
 
 import hedcutURL from "../../images/hedcut-tiny.png";
 
-import inStealthURL from "../../images/see-no-evil-monkey.png";
+import figmaURL from "../../images/figma-logo.svg";
 import bigSparrowURL from "../../images/big-sparrow.png";
 import porticoPayURL from "../../images/portico-pay.png";
 import zulipURL from "../../images/zulip.png";
@@ -15,6 +15,7 @@ import labelInStealthURL from "../../images/label--in-stealth.png";
 import labelSparrowURL from "../../images/label--sparrow.png";
 import labelPorticoPayURL from "../../images/label--portico-pay.png";
 import labelZulipURL from "../../images/label--zulip.png";
+import labelFigmaURL from "../../images/label--figma.png";
 
 import labelStochasticMarketModellingURL from "../../images/label--stochastic-market-modeling.png";
 import kurtosisExplanationURL from "../../images/kurtosis-explanation.png";
@@ -50,18 +51,19 @@ export default class Index extends React.Component {
           <img id="hedcut" src={hedcutURL} />
           <div className="inline-block bio-text">
             <h2>Bio</h2>
-            <p>👋 I'm Brock Whittaker and I'm a product engineer &amp; designer working and living in San Francisco.</p>
+            <p>👋 I'm Brock Whittaker and I'm a product engineer &amp; designer working at Figma and living in San Francisco.</p>
             <p>I was the founding engineer at two startups and built tech used by dozens of companies ranging from multi-variate testing and elastic price segmentation, to building software and processes with HIPAA compliance for many of the largest tech companies.</p>
+            <p>I now work on the <a href="https://figma.com/community" target="_blank">Community</a> product at Figma, helping Figma users share plugins, files, and collaborate together.</p>
             <p className="contact">Contact me at <a href="mailto:whittakerbrock@gmail.com">whittakerbrock@gmail.com</a>.</p>
           </div>
         </div>
         <div id="work" className="section">
           <h2>Recent Experience</h2>
           <div className="work-section">
-            <div className="work-logo" style={{ backgroundImage: `url(${inStealthURL})`, backgroundSize: `90% 90%` }}></div>
+            <div className="work-logo" style={{ backgroundImage: `url(${figmaURL})`, backgroundSize: `90% 90%`, filter: `saturate(0) contrast(1.3)`}}></div>
             <div className="work-description">
-              <h3><img className="h-55" src={labelInStealthURL} /><a className="site-link">Available on Request</a></h3>
-              <p>Currently working on a contract to build a mobile web application with a strong focus on creating a refined design.</p>
+              <h3><img className="h-55" src={labelFigmaURL} /><a className="site-link">Figma Site</a></h3>
+              <p>An engineer working on building a Community product for Figma to help designers collaborate, as well as making design more accessible to all.</p>
             </div>
           </div>
           <div className="work-section">

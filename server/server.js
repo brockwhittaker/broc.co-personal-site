@@ -42,7 +42,7 @@ const pluckFromObject = (keys) => {
 (async () => {
   app.use(bodyParser.json());
   app.use(require('cookie-parser')());
-
+  app.set('trust proxy', true);
   app.get("/api/:ticker/", async (req, res) => {
     const { ticker } = req.params;
 
@@ -110,7 +110,7 @@ const pluckFromObject = (keys) => {
     }
     const log = {
       url: req.url,
-      ip: req.ip,
+      ip: req.headers['x-real-ip'] || req.ip,
       time: new Date().getTime(),
       cookie,
     }

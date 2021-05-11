@@ -97,13 +97,19 @@ const pluckFromObject = (keys) => {
 
   app.use("/dist/", express.static("../dist"));
   app.use("/blog-dist/", express.static("../blog-dist"));
+  app.use("/static/", express.static("../static"))
 
   app.get('/blog/*', (req, res) => res.sendFile(path.join(__dirname, "../blog-dist/blog.html")));
   app.get('/', (req, res) => res.sendFile(path.join(__dirname, "../dist/index.html")));
 
   app.get('/*', (req, res) => {
     let cookie = req.cookies.brocklytics
-    res.sendFile(path.join(__dirname, "../dist/index.html"));
+    if (/homes-are-cheaper-than-ever/.test(req.url)) {
+      res.sendFile(path.join(__dirname, "../dist/home-prices-index.html"))
+    } else {
+      res.sendFile(path.join(__dirname, "../dist/index.html"));
+    }
+
     if (!cookie) {
       cookie = Math.random().toString().split(".")[1]
       res.cookie('brocklytics', cookie, { maxAge: 1000 * 60 * 60 * 24 * 30 });

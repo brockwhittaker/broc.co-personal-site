@@ -89,13 +89,13 @@
 }
 
 @media (max-width: 1000px) {
-  .figure--article-width {
+  .housing-blog .figure--article-width {
     margin: 20px 0px;
     width: 100%;
   }
 
   .housing-blog .header {
-    margin: 20px;
+    margin: 60px 20px 20px;
     width: calc(100% - 40px);
     height: 50vh;
   }

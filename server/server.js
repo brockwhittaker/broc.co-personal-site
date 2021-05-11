@@ -97,7 +97,7 @@ const pluckFromObject = (keys) => {
 
   app.use("/dist/", express.static("../dist"));
   app.use("/blog-dist/", express.static("../blog-dist"));
-  app.use("/static/", express.static("../static"))
+  app.use("/static/", express.static("../frontend/static"))
 
   app.get('/blog/*', (req, res) => res.sendFile(path.join(__dirname, "../blog-dist/blog.html")));
   app.get('/', (req, res) => res.sendFile(path.join(__dirname, "../dist/index.html")));

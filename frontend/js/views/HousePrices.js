@@ -173,6 +173,11 @@ export default class PredictingMarketReturns extends React.Component {
             <h2>Some follow-up thoughts.</h2>
             <p>Despite whether many people think the housing market today is frothy, or too expensive, the feeling that the market is inaccessible is a valid feeling. I don't believe people have made up a villain, but I do believe the misattribution of the high cost of a home is due to other lurking variables in the way in which we spend money in 2020 that has changed since 1980. My hunch: the <a href="https://www.investopedia.com/student-loan-debt-2019-statistics-and-outlook-4772007" target="_blank">$37,584 in student loans</a> that the average college attendee has upon leaving campus has replaced the average graduate&rsquo;s first-home downpayment.</p>
           </section>
+          <hr />
+          <section>
+            <h2>Also read...</h2>
+            <p><a href="/predicting-market-returns?t=tAXC8">The price tomorrow? Just ask.</a></p>
+          </section>
         </article>
       </div>
     )

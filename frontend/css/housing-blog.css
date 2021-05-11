@@ -54,6 +54,7 @@
   width: calc(100% - 100px);
   height: 70vh;
   background-position: center center;
+  background-size: cover;
   margin: 100px 50px 50px;
 }
 

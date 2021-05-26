@@ -8,7 +8,7 @@ echo 'running blog'
 cd ../server
 echo 'cd ./server'
 if [[ "$1" == "prod" ]]; then
-  forever PORT=4000 nodemon server.js
+  PORT=4000 forever server.js
 else
   PORT=4000 nodemon server.js
 fi

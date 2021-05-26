@@ -7,5 +7,9 @@ parcel blog.html --out-dir=../blog-dist/ --public-url=/blog-dist/ &
 echo 'running blog'
 cd ../server
 echo 'cd ./server'
-PORT=4000 nodemon server.js
+if [[ "$1" == "prod" ]]; then
+  forever PORT=4000 nodemon server.js
+else
+  PORT=4000 nodemon server.js
+fi
 echo 'run node'

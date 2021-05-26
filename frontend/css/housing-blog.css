@@ -102,17 +102,28 @@
   }
 
   .housing-blog .header h1 {
-    line-height: 1.6;
-    font-size: 1.3em;
+    line-height: 1.5;
+    font-size: 1.8em;
   }
 
   .housing-blog .header h2 {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
 
   .header-wrapper {
     bottom: 20px;
     left: 20px;
     width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .housing-blog .header h1 {
+    line-height: 1.6;
+    font-size: 1.3em;
+  }
+
+  .housing-blog .header h2 {
+    font-size: 1.1em;
   }
 }
